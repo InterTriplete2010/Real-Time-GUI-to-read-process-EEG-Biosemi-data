@@ -2044,7 +2044,7 @@ private:
 		Min_Val_Freq->Visible = true;
 		Max_Val_Freq->Visible = true;
 
-		Status_Connection->Text = "Connection to the server established" + " - Time: " + day_time->tm_hour + ":" + day_time->tm_min + ":" + day_time->tm_sec + "\n";
+		Status_Connection->Text += "Connection to the server established" + " - Time: " + day_time->tm_hour + ":" + day_time->tm_min + ":" + day_time->tm_sec + "\n";
 		
 		if (Continuous_Av_Data->SelectedIndex == 1)
 		{
