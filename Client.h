@@ -2179,9 +2179,9 @@ private:
 		   double mean_ref;		//Variable used to demean the ref channel(s)
 
 		   //Variables used to store the bytes converted from char to double
-		   double byte_1;
-		   double byte_2;
-		   double byte_3;
+		   uint8_t byte_3;
+		   uint8_t byte_2;
+		   uint8_t byte_1;
 
 			   std::vector<double> temp_v;
 
@@ -2248,31 +2248,11 @@ private:
 						   if (track_pos_sample + track_data_plot < refresh_time_w)
 						   {
 							   
-							   //Convert the bytes from char to double
-							   byte_1 = (double)buf_data[track_bytes];
-							   if (byte_1 < 0)
-							   {
-
-								   byte_1 += 256;
-
-							   }
-
-							   byte_2 = (double)buf_data[track_bytes + 1];
-							   if (byte_2 < 0)
-							   {
-
-								   byte_2 += 256;
-
-							   }
-
-							   byte_3 = (double)buf_data[track_bytes + 2];
-							   if (byte_3 < 0)
-							   {
-
-								   byte_3 += 256;
-
-							   }
-
+							  //Converting the bytes from char to double
+							   byte_3 = (uint8_t)buf_data[track_bytes + 2];
+							   byte_2 = (uint8_t)buf_data[track_bytes + 1];
+							   byte_1 = (uint8_t)buf_data[track_bytes];
+							   
 							   temp_value = byte_3 * pow(2, 24) + byte_2 * pow(2, 16) + byte_1 * pow(2, 8);
 
 							   //Complement 2 conversion
@@ -2415,9 +2395,14 @@ private:
 		   int track_bytes_save = 0;
 		   std::vector<double> save_bytes(refresh_time_w*3);
 
-		   double byte_1;
-		   double byte_2;
-		   double byte_3;
+		   //Variables used to store the bytes of the trigger
+		   uint8_t byte_2_trig;
+		   uint8_t byte_1_trig;
+
+		   //Variables used to store the bytes converted from char to double
+		   uint8_t byte_3;
+		   uint8_t byte_2;
+		   uint8_t byte_1;
 
 			std::vector<double> temp_v;
 
@@ -2542,30 +2527,10 @@ private:
 						   if (track_pos_sample + track_data_plot < refresh_time_w)
 						   {
 							   
-							   //Convert the bytes from char to double
-							   byte_1 = (double)buf_data[track_bytes];
-							   if (byte_1 < 0)
-							   {
-
-								   byte_1 += 256;
-
-							   }
-
-							   byte_2 = (double)buf_data[track_bytes + 1];
-							   if (byte_2 < 0)
-							   {
-
-								   byte_2 += 256;
-
-							   }
-
-							   byte_3 = (double)buf_data[track_bytes + 2];
-							   if (byte_3 < 0)
-							   {
-
-								   byte_3 += 256;
-
-							   }
+							   //Converting the bytes from char to double
+							   byte_3 = (uint8_t)buf_data[track_bytes + 2];
+							   byte_2 = (uint8_t)buf_data[track_bytes + 1];
+							   byte_1 = (uint8_t)buf_data[track_bytes];
 
 							   temp_value = byte_3 * pow(2, 24) + byte_2 * pow(2, 16) + byte_1 * pow(2, 8);
 
