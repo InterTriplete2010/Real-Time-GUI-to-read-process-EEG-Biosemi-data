@@ -86,8 +86,8 @@ namespace RealTimeBiosemiCpp {
 	private: int* temp_bytes_trig;    //This array is used to store 2 bytes for the trigger line
 	private: int track_bytes;	//Variable used to track the position of the bytes for each channel
 	public protected: int size_package;	//Size of the package to read from Biosemi
-	private: int read_bytes_trig;	//Variable used to temporarily store the trigger code
-	private: int plot_read_bytes_trig;	//Variable used to temporarily store the trigger code (for plotting purpose, only)
+	private: uint8_t read_bytes_trig;	//Variable used to temporarily store the trigger code
+	private: uint8_t plot_read_bytes_trig;	//Variable used to temporarily store the trigger code (for plotting purpose, only)private: int plot_read_bytes_trig;	//Variable used to temporarily store the trigger code (for plotting purpose, only)
 	private: int* read_bytes;	//Array used to read the 4 bytes that are used to encode each sample;
 	private: bool connected_true;	//Variable used to check if the connection is open
 	private: String^ temp_trig_string;	//String where to temprarily save the trigger code val
@@ -2476,7 +2476,12 @@ private:
 			   for (int temp_track_sample_trig = 0; temp_track_sample_trig < size_samples; temp_track_sample_trig++)  //Loop through all the samples per each channel
 			   {
 
-				   read_bytes_trig = (uint8_t)(buf_data[track_bytes + 1] << 8 | buf_data[track_bytes]);
+				   //read_bytes_trig = (uint8_t)(buf_data[track_bytes + 1] << 8 | buf_data[track_bytes]);
+				   
+				   byte_2_trig = (uint8_t)(buf_data[track_bytes + 1]);
+				   byte_1_trig = (uint8_t)(buf_data[track_bytes]);
+
+				   read_bytes_trig = byte_2_trig * pow(2, 8) + byte_1_trig;
 
  
 				   //Check if one of the selected triggers has been detected
