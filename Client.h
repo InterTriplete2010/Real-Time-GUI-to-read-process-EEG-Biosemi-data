@@ -2476,7 +2476,7 @@ private:
 			   for (int temp_track_sample_trig = 0; temp_track_sample_trig < size_samples; temp_track_sample_trig++)  //Loop through all the samples per each channel
 			   {
 
-				   read_bytes_trig = (int)(buf_data[track_bytes + 1] << 8 | buf_data[track_bytes]);
+				   read_bytes_trig = (uint8_t)(buf_data[track_bytes + 1] << 8 | buf_data[track_bytes]);
 
  
 				   //Check if one of the selected triggers has been detected
