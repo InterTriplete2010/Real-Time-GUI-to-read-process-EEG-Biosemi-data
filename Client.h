@@ -3623,7 +3623,7 @@ private:
 			else
 			{
 
-				Magnitude_Response_Filter->Series[0]->LegendText = "The filter is untable";
+				Magnitude_Response_Filter->Series[0]->LegendText = "The filter is unstable";
 
 			}
 
