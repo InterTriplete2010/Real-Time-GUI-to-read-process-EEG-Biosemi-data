@@ -5,4 +5,4 @@ This GUI is meant read and analyze EEG Biosemi data in real time. The executable
 
 I upaloded a pdf file named "Guide to Real Time Biosemi" that provides a quick and simple guide to use the Real Time Biosemi GUI. I hope I was able to describe everything clearly.
 
-If you have any question and/or want to report bugs, please e-mail me (Alex) at: pressalex@hotmail.com
+If you have any question and/or want to report bugs, please e-mail me (Ale) at: pressalex@hotmail.com
