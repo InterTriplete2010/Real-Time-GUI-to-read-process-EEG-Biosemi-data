@@ -698,7 +698,7 @@ void IIR_Butterworth::zp2ss(int order_filt)
 
                         case 0:
 
-                            if ((remainder(kk + 1, 2) != 0) | (kk == 0))
+                            if ((remainder(kk + 1, 2) != 0) || (kk == 0))
                             {
 
                                 a[kk][gg] = temp_matrix_a[track_index_coeff][1];
@@ -716,7 +716,7 @@ void IIR_Butterworth::zp2ss(int order_filt)
 
                         case -1:
 
-                            if ((remainder(kk + 1, 2) != 0) | (kk == 0))
+                            if ((remainder(kk + 1, 2) != 0) || (kk == 0))
                             {
 
                                 a[kk][gg] = temp_matrix_a[track_index_coeff][2];
