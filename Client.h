@@ -1516,7 +1516,7 @@ private:
 		Frequency_Domain_Plot_Chart_IV->Series[0]->Points->Clear();
 
 		//Set the x-axis of the FFT
-		if ((!Equals(Min_Val_Freq->Text, "")) & (!Equals(Max_Val_Freq->Text, "")))
+		if ((!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
 		{
 
 			min_FFT_axis = binary_search_function(Convert::ToInt32(Min_Val_Freq->Text), freq_axis, 0, (samples_FFT / 2) - 4);
@@ -1608,7 +1608,7 @@ private:
 
 						Frequency_Domain_Plot_Chart_I->Series[0]->Points->AddXY(freq_axis[kk], Math::Pow(abs(fft_output[bb][kk]) / (samples_FFT / 2),2));
 						
-						if ((kk == 0) & (!Equals(Min_Val_Freq->Text, "")) & (!Equals(Max_Val_Freq->Text, "")))
+						if ((kk == 0) & (!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
 						{
 
 							Frequency_Domain_Plot_Chart_I->ChartAreas[0]->AxisX->Minimum = min_FFT_axis;
@@ -1622,7 +1622,7 @@ private:
 
 						Frequency_Domain_Plot_Chart_II->Series[0]->Points->AddXY(freq_axis[kk], Math::Pow(abs(fft_output[bb][kk]) / (samples_FFT / 2), 2));
 
-						if ((kk == 0) & (!Equals(Min_Val_Freq->Text, "")) & (!Equals(Max_Val_Freq->Text, "")))
+						if ((kk == 0) & (!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
 						{
 
 						Frequency_Domain_Plot_Chart_II->ChartAreas[0]->AxisX->Minimum = min_FFT_axis;
@@ -1636,7 +1636,7 @@ private:
 
 						Frequency_Domain_Plot_Chart_III->Series[0]->Points->AddXY(freq_axis[kk], Math::Pow(abs(fft_output[bb][kk]) / (samples_FFT / 2), 2));
 
-						if ((kk == 0) & (!Equals(Min_Val_Freq->Text, "")) & (!Equals(Max_Val_Freq->Text, "")))
+						if ((kk == 0) & (!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
 						{
 
 							Frequency_Domain_Plot_Chart_III->ChartAreas[0]->AxisX->Minimum = min_FFT_axis;
@@ -1651,7 +1651,7 @@ private:
 						Frequency_Domain_Plot_Chart_IV->Series[0]->Points->AddXY(freq_axis[kk], Math::Pow(abs(fft_output[bb][kk]) / (samples_FFT / 2), 2));
 
 
-						if ((kk == 0) & (!Equals(Min_Val_Freq->Text, "")) & (!Equals(Max_Val_Freq->Text, "")))
+						if ((kk == 0) & (!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
 						{
 
 							Frequency_Domain_Plot_Chart_IV->ChartAreas[0]->AxisX->Minimum = min_FFT_axis;
@@ -1730,7 +1730,7 @@ private:
 		try
 		{
 
-			if ((Convert::ToInt32(Refreshing_Rate->Text) <= 0) & (Continuous_Av_Data->SelectedIndex == 1))
+			if ((Convert::ToInt32(Refreshing_Rate->Text) <= 0) && (Continuous_Av_Data->SelectedIndex == 1))
 			{
 
 				MessageBox::Show("The refreshing rate has a value <= 0", "Error");
@@ -1992,7 +1992,7 @@ private:
 		
 		//Extract the filter coefficients
 		std::vector<std::vector<double> > save_filt_coeff;	//Array used to save the coefficients of the filter
-		if ((!Equals(HF_Cut->Text, "")) & (!Equals(LF_Cut->Text, "")) & (!Equals(Order_Filt->Text, "")))
+		if ((!Equals(HF_Cut->Text, "")) && (!Equals(LF_Cut->Text, "")) && (!Equals(Order_Filt->Text, "")))
 		{
 
 			save_filt_coeff = Initialize_Filter(false);
@@ -3562,7 +3562,7 @@ private:
 	private: System::Void Plot_Filter_Response_Click(System::Object^ sender, System::EventArgs^ e) 
 	{
 
-		if ((!Equals(HF_Cut->Text, "")) & (!Equals(LF_Cut->Text, "")) & (!Equals(Order_Filt->Text, "")))
+		if ((!Equals(HF_Cut->Text, "")) && (!Equals(LF_Cut->Text, "")) && (!Equals(Order_Filt->Text, "")))
 		{
 
 			std::vector<std::vector<double> >  save_magnitude_filt;	//Array used to save the coefficients of the filter
@@ -4239,7 +4239,7 @@ private: System::Void Type_Filter_SelectedIndexChanged(System::Object^ sender, S
 
 			   }
 
-			   if (Convert::ToDouble(HF_Cut -> Text) >= Convert::ToDouble(LF_Cut -> Text) & Type_Filter -> SelectedIndex < 2)
+			   if (Convert::ToDouble(HF_Cut -> Text) >= Convert::ToDouble(LF_Cut -> Text) && Type_Filter -> SelectedIndex < 2)
 			   {
 
 				   HF_Cut -> Text = Convert::ToString(Math::Abs(Convert::ToDouble(LF_Cut -> Text) - 0.01));
