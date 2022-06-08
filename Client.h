@@ -1608,7 +1608,7 @@ private:
 
 						Frequency_Domain_Plot_Chart_I->Series[0]->Points->AddXY(freq_axis[kk], Math::Pow(abs(fft_output[bb][kk]) / (samples_FFT / 2),2));
 						
-						if ((kk == 0) & (!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
+						if ((kk == 0) && (!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
 						{
 
 							Frequency_Domain_Plot_Chart_I->ChartAreas[0]->AxisX->Minimum = min_FFT_axis;
@@ -1622,7 +1622,7 @@ private:
 
 						Frequency_Domain_Plot_Chart_II->Series[0]->Points->AddXY(freq_axis[kk], Math::Pow(abs(fft_output[bb][kk]) / (samples_FFT / 2), 2));
 
-						if ((kk == 0) & (!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
+						if ((kk == 0) && (!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
 						{
 
 						Frequency_Domain_Plot_Chart_II->ChartAreas[0]->AxisX->Minimum = min_FFT_axis;
@@ -1636,7 +1636,7 @@ private:
 
 						Frequency_Domain_Plot_Chart_III->Series[0]->Points->AddXY(freq_axis[kk], Math::Pow(abs(fft_output[bb][kk]) / (samples_FFT / 2), 2));
 
-						if ((kk == 0) & (!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
+						if ((kk == 0) && (!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
 						{
 
 							Frequency_Domain_Plot_Chart_III->ChartAreas[0]->AxisX->Minimum = min_FFT_axis;
@@ -1651,7 +1651,7 @@ private:
 						Frequency_Domain_Plot_Chart_IV->Series[0]->Points->AddXY(freq_axis[kk], Math::Pow(abs(fft_output[bb][kk]) / (samples_FFT / 2), 2));
 
 
-						if ((kk == 0) & (!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
+						if ((kk == 0) && (!Equals(Min_Val_Freq->Text, "")) && (!Equals(Max_Val_Freq->Text, "")))
 						{
 
 							Frequency_Domain_Plot_Chart_IV->ChartAreas[0]->AxisX->Minimum = min_FFT_axis;
