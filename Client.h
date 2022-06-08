@@ -155,12 +155,12 @@ namespace RealTimeBiosemiCpp {
 
 	private: System::Windows::Forms::Label^ label19;
 	private: System::Windows::Forms::TextBox^ Sweeps_Rejected;
-private: System::Windows::Forms::ComboBox^ Polarity_Data;
-private: System::Windows::Forms::Label^ label14;
-private: System::Windows::Forms::GroupBox^ groupBox4;
-private: System::Windows::Forms::Label^ label20;
-private: System::Windows::Forms::GroupBox^ groupBox5;
-private: System::Windows::Forms::Label^ label21;
+	private: System::Windows::Forms::ComboBox^ Polarity_Data;
+	private: System::Windows::Forms::Label^ label14;
+	private: System::Windows::Forms::GroupBox^ groupBox4;
+	private: System::Windows::Forms::Label^ label20;
+	private: System::Windows::Forms::GroupBox^ groupBox5;
+	private: System::Windows::Forms::Label^ label21;
 
 
 	//Object used to handle the secondary window for the customized channels
