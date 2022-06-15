@@ -1933,6 +1933,7 @@ private:
 
 		}
 		
+		/*
 		//Check if one or more of the channels to be analyzed is also used as a reference. If that is the case, that channel will be removed from the analysis
 		for (int kk = 0; kk < chan_analysis_biosemi; kk++)
 		{
@@ -1940,7 +1941,8 @@ private:
 
 
 		}
-
+		*/
+		
 		//Adding the reference channels
 		for (int kk = chan_analysis_biosemi; kk < chan_analysis_biosemi + temp_ref_chan_string->Length; kk++)
 		{
