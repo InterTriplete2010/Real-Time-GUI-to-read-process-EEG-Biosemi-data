@@ -3967,7 +3967,7 @@ private:
 
 			track_index = 0;
 
-			W_n_k = cos(2.0 * PI * kk / (double)samples_FFT) - complex_imag_fft * sin(2.0 * PI * kk / (double)samples_FFT);
+			W_n_k = cos(2.0 * PI * kk / (double)samples_FFT) + complex_imag_fft * sin(2.0 * PI * kk / (double)samples_FFT);
 
 			//The second loop is the for the samples of the signal. This loop populates the matrix
 			//with the cos / sin values
@@ -3975,7 +3975,7 @@ private:
 			for (double nn = 0; nn < samples_FFT/2 - 1; nn++)
 			{
 
-				W = cos(2.0 * PI * kk * nn / ((double)samples_FFT/2)) - complex_imag_fft * sin(2.0 * PI * kk * nn / ((double)samples_FFT/2));
+				W = cos(2.0 * PI * kk * nn / ((double)samples_FFT/2)) + complex_imag_fft * sin(2.0 * PI * kk * nn / ((double)samples_FFT/2));
 			
 				for (int bb = 0; bb < chan_analysis_biosemi; bb++)
 				{
@@ -4380,5 +4380,6 @@ private: System::Void Order_Filt_TextChanged(System::Object^ sender, System::Eve
 
 };
 }
+
 
 
